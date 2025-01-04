@@ -9,7 +9,7 @@
     <h1>Scan My Contact QR Code</h1>
     <p>Scan the QR code below to save my contact information directly to your phone.</p>
 
-    <div id="qrcode"></div>
+    <div id="qrcode"></div> <!-- QR code will appear here -->
 
     <!-- Include the QR Code generation library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
@@ -31,6 +31,9 @@
             text: vCard, // vCard data to be encoded in the QR code
             width: 256,  // QR code width (pixels)
             height: 256, // QR code height (pixels)
+            colorDark: "#000000", // Dark color for the QR code
+            colorLight: "#ffffff", // Light background for the QR code
+            correctLevel: QRCode.CorrectLevel.H // Highest error correction level
         });
     </script>
 </body>
