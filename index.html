@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Static QR Code for My Contact</title>
+</head>
+<body>
+    <h1>Scan My Contact QR Code</h1>
+    <p>Scan the QR code below to save my contact information directly to your phone.</p>
+
+    <div id="qrcode"></div>
+
+    <!-- Include the QR Code generation library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script>
+        // Define your contact details in vCard format
+        const vCard = `
+        BEGIN:VCARD
+        VERSION:3.0
+        N:John Doe
+        TEL:+1234567890
+        EMAIL:john.doe@example.com
+        ORG:Example Company
+        TITLE:Software Developer
+        END:VCARD`;
+
+        // Generate the QR code with your contact information
+        const qrCodeElement = document.getElementById("qrcode");
+        new QRCode(qrCodeElement, {
+            text: vCard, // vCard data to be encoded in the QR code
+            width: 256,  // QR code width (pixels)
+            height: 256, // QR code height (pixels)
+        });
+    </script>
+</body>
+</html>
